@@ -227,8 +227,8 @@ anyOf folded (==2) [1] = False
 > lens sa bst afb s = (bst s) <$> afb (sa s)
 
 
- type Getting r s a = (a -> Const r a) -> s -> Const r s
- type Lens s t a b = forall f. Functor f => (a -> f b) -> s -> f t
- type Setter s t a b = (a -> Identity b) -> s -> Identity t
+ type Getting r s a =                                (a -> Const r a) -> s -> Const r s
+ type Lens s t a b = forall f. Functor f          => (a -> f b) -> s -> f t
+ type Setter s t a b =                               (a -> Identity b) -> s -> Identity t
  type Traversal s t a b = forall f. Applicative f => (a -> f b) -> s -> f t
- type Fold s a = forall m. Monoid m => (a -> Const m a) -> s -> Const m s
+ type Fold s a = forall m. Monoid m =>               (a -> Const m a) -> s -> Const m s
